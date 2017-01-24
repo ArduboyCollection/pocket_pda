@@ -8,7 +8,7 @@
 
 Pocket PDA is an OS for the Arduboy with some useful utilities.
 
-<img src="docs/run.png" width="512">
+![](docs/run.png)
 
 ## Installation
 
@@ -36,6 +36,8 @@ Pocket PDA is an OS for the Arduboy with some useful utilities.
 
 ### 6. Calendar
 
-### 7. Controller
+### 7. Games
 
-### 8. Games
+### 8. Controller
+
+### 9. Todo
