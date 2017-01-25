@@ -220,7 +220,7 @@ static void onButton00Clicked(PdaOS* os, AppCalculator* app) {
   app->txtResult = app->operand0;
 }
 
-static void input(PdaOS* os, AppCalculator* app) {
+static void update(PdaOS* os, AppCalculator* app) {
   const ButtonClickedEventHandler handlers[] = {
     onButton7Clicked, onButton8Clicked, onButton9Clicked, onButtonDivClicked, onButtonClearClicked,
     onButton4Clicked, onButton5Clicked, onButton6Clicked, onButtonMulClicked, onButtonReverseClicked,
@@ -248,8 +248,8 @@ static void input(PdaOS* os, AppCalculator* app) {
       }
       break;
     case B_BUTTON:
-      if (app->opcode0 == "" && (app->operand0 == "" || app->operand0 == "0")) os->app = -os->app;
-      else clear(app);
+      if (app->opcode0 == "" && (app->operand0 == "" || app->operand0 == "0")) { app->exit(); os->app = -os->app; }
+      else { clear(app); }
       break;
   }
 }
@@ -288,6 +288,6 @@ static void draw(PdaOS* os, AppCalculator* app) {
 
 void app_calculator(PdaOS* os) {
   AppCalculator* app = &os->calc;
-  input(os, app);
+  update(os, app);
   draw(os, app);
 }

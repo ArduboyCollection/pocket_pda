@@ -24,20 +24,38 @@ Operation::Operation() {
 }
 
 AppCalculator::AppCalculator() {
-  init();
 }
 
 AppCalculator::~AppCalculator() {
 }
 
 void AppCalculator::init(void) {
+  memset(this, 0, sizeof(AppCalculator));
   txtResult = "0";
   opcode0 = opcode1 = opcode2 = operand0 = "";
   operand1 = operand2 = operand3 = 0;
   dotClicked = numClicked = false;
   cursor.x = cursor.y = 0;
 }
-  
+
+void AppCalculator::exit(void) {
+}
+
+AppFlashlight::AppFlashlight() {
+}
+
+AppFlashlight::~AppFlashlight() {
+}
+
+void AppFlashlight::init(void) {
+  always = true;
+  interval = 60;
+  tick = 0;
+}
+
+void AppFlashlight::exit(void) {
+}
+
 PdaOS::PdaOS() {
   app = -APP_BEGIN;
 }

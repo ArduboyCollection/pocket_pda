@@ -25,7 +25,7 @@ Remember the PocketStation?
 * Open the `/pocket_pda/pocket_pda.ino` sketch with the Arduino IDE.
 * Compile and upload the sketch.
 
-## Functionalities
+## Applications
 
 ![](docs/run0.png)
 
@@ -41,7 +41,11 @@ A basic math calculator App.
 
 ### 2. Flashlight
 
-IN PLAN
+A flashlibht App.
+
+* `UP`/`DOWN` to modify flash interval.
+* `A` to toggle flash.
+* `B` to exit the App.
 
 ### 3. Finances
 

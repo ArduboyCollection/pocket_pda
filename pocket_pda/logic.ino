@@ -15,7 +15,7 @@ extern void app_todo(PdaOS* os);
 static void init(PdaOS* os) {
   switch (os->app) {
     case APP_CALCULATOR: os->calc.init(); break;
-    case APP_FLASHLIGHT: break;
+    case APP_FLASHLIGHT: os->flashlight.init(); break;
     case APP_FINANCES: break;
     case APP_CHRONOGRAPH: break;
     case APP_COUNTDOWN: break;

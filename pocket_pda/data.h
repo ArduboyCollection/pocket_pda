@@ -48,6 +48,18 @@ struct AppCalculator {
   AppCalculator();
   ~AppCalculator();
   void init(void);
+  void exit(void);
+};
+
+struct AppFlashlight {
+  bool always;
+  int16_t interval;
+  int16_t tick;
+
+  AppFlashlight();
+  ~AppFlashlight();
+  void init(void);
+  void exit(void);
 };
 
 struct PdaOS {
@@ -55,6 +67,7 @@ struct PdaOS {
   int8_t app;
   union {
     AppCalculator calc;
+    AppFlashlight flashlight;
   };
 
   PdaOS();
