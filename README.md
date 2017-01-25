@@ -33,18 +33,36 @@ Remember the PocketStation?
 
 ### 1. Calculator
 
+IN PLAN
+
 ### 2. Flashlight
+
+IN PLAN
 
 ### 3. Finances
 
+IN PLAN
+
 ### 4. Chronograph
+
+IN PLAN
 
 ### 5. Countdown
 
+IN PLAN
+
 ### 6. Calendar
+
+IN PLAN
 
 ### 7. Games
 
+IN PLAN
+
 ### 8. Controller
 
+IN PLAN
+
 ### 9. Todo
+
+IN PLAN

@@ -32,11 +32,33 @@ enum Apps {
   APP_END
 };
 
+struct AppCalculator {
+  String opcode0;
+  String opcode1;
+  String opcode2;
+  String operand0;
+  double operand1;
+  double operand2;
+  double operand3;
+  bool dotClicked;
+  bool numClicked;
+  Point cursor;
+
+  AppCalculator();
+  ~AppCalculator();
+
+  void clear(void);
+};
+
 struct PdaOS {
   Arduboy2* arduboy;
   int8_t app;
+  union {
+    AppCalculator calc;
+  };
 
   PdaOS();
+  ~PdaOS();
 };
 
 void load(void);

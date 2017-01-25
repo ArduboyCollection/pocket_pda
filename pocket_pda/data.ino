@@ -23,8 +23,25 @@ Operation::Operation() {
   pl = pr = pu = pd = pa = pb = false;
 }
 
+AppCalculator::AppCalculator() {
+  clear();
+}
+
+AppCalculator::~AppCalculator() {
+}
+
+void AppCalculator::clear(void) {
+  opcode0 = opcode1 = opcode2 = operand0 = "";
+  operand1 = operand2 = operand3 = 0;
+  dotClicked = numClicked = false;
+  cursor.x = cursor.y = 0;
+}
+  
 PdaOS::PdaOS() {
   app = -APP_BEGIN;
+}
+
+PdaOS::~PdaOS() {
 }
 
 void load(void) {
