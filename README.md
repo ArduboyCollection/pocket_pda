@@ -33,7 +33,11 @@ Remember the PocketStation?
 
 ### 1. Calculator
 
-IN PLAN
+A basic math calculator App.
+
+* `D-Pad` to move the cursor.
+* `A` to press a button.
+* `B` to clear result, or exit the App if not resulted.
 
 ### 2. Flashlight
 

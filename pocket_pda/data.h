@@ -33,6 +33,7 @@ enum Apps {
 };
 
 struct AppCalculator {
+  String txtResult;
   String opcode0;
   String opcode1;
   String opcode2;
@@ -46,8 +47,7 @@ struct AppCalculator {
 
   AppCalculator();
   ~AppCalculator();
-
-  void clear(void);
+  void init(void);
 };
 
 struct PdaOS {

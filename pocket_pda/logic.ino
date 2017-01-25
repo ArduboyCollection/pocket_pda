@@ -12,6 +12,21 @@ extern void app_games(PdaOS* os);
 extern void app_controller(PdaOS* os);
 extern void app_todo(PdaOS* os);
 
+static void init(PdaOS* os) {
+  switch (os->app) {
+    case APP_CALCULATOR: os->calc.init(); break;
+    case APP_FLASHLIGHT: break;
+    case APP_FINANCES: break;
+    case APP_CHRONOGRAPH: break;
+    case APP_COUNTDOWN: break;
+    case APP_CALENDAR: break;
+    case APP_GAMES: break;
+    case APP_CONTROLLER: break;
+    case APP_TODO: break;
+    default: break;
+  }
+}
+
 static void menu(PdaOS* os) {
   int8_t &app = os->app;
   switch (input()) {
@@ -33,6 +48,7 @@ static void menu(PdaOS* os) {
       break;
     case A_BUTTON:
       app = -app;
+      init(os);
       return;
   }
   if (app <= -APP_BEGIN && app > -(APP_BEGIN + 6)) os->arduboy->drawBitmap(0, 0, SPRITE_MENU0, 128, 64, WHITE);
@@ -45,6 +61,10 @@ static void menu(PdaOS* os) {
 
 double toDouble(const String &str) {
   return strtod(str.c_str(), 0);
+}
+
+void toString(double n, String &ret) {
+  ret = String(n);
 }
 
 uint8_t input(void) {

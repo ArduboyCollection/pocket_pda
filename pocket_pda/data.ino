@@ -24,13 +24,14 @@ Operation::Operation() {
 }
 
 AppCalculator::AppCalculator() {
-  clear();
+  init();
 }
 
 AppCalculator::~AppCalculator() {
 }
 
-void AppCalculator::clear(void) {
+void AppCalculator::init(void) {
+  txtResult = "0";
   opcode0 = opcode1 = opcode2 = operand0 = "";
   operand1 = operand2 = operand3 = 0;
   dotClicked = numClicked = false;
