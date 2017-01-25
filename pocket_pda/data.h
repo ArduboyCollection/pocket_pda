@@ -16,6 +16,7 @@ struct Operation {
   bool pb : 1;
 
   Operation();
+  void init(void);
 };
 
 enum Apps {
@@ -31,6 +32,8 @@ enum Apps {
   APP_TODO,
   APP_END
 };
+
+struct PdaOS;
 
 struct AppCalculator {
   String txtResult;
@@ -62,12 +65,21 @@ struct AppFlashlight {
   void exit(void);
 };
 
+struct AppController {
+  AppController();
+  ~AppController();
+  void init(PdaOS* os);
+  void exit(void);
+};
+
 struct PdaOS {
   Arduboy2* arduboy;
+  Operation* operation;
   int8_t app;
   union {
     AppCalculator calc;
-    AppFlashlight flashlight;
+    AppFlashlight light;
+    AppController ctrl;
   };
 
   PdaOS();

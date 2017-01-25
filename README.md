@@ -33,6 +33,8 @@ Remember the PocketStation?
 
 ### 1. Calculator
 
+![](docs/app_calc.png)
+
 A basic math calculator App.
 
 * `D-Pad` to move the cursor.
@@ -40,6 +42,8 @@ A basic math calculator App.
 * `B` to clear result, or exit the App if not resulted.
 
 ### 2. Flashlight
+
+![](docs/app_light.png)
 
 A flashlibht App.
 
@@ -69,7 +73,15 @@ IN PLAN
 
 ### 8. Controller
 
-IN PLAN
+![](docs/app_ctrl.png)
+
+A simulated keyboard App, can be used as a game controller.
+
+* `D-Pad` to simulate the arrow keys.
+* `A` to simulate the `HOME` key.
+* `B` to simulate the `END` key.
+
+Hold all keys to exit the controller App.
 
 ### 9. Todo
 

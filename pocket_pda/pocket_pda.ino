@@ -23,6 +23,7 @@ void setup() {
   A.initRandomSeed();
   A.setFrameRate(30);
   OS.arduboy = &A;
+  initLogic(&OS);
   intro();
 }
 

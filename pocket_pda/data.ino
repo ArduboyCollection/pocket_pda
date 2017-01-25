@@ -19,7 +19,13 @@ static uint32_t EEPROMReadlong(uint16_t address) {
   return ((four << 0) & 0xff) + ((three << 8) & 0xffff) + ((two << 16) & 0xffffff) + ((one << 24) & 0xffffffff);
 }
 
+extern void app_init_controller(PdaOS* os);
+
 Operation::Operation() {
+  init();
+}
+
+void Operation::init(void) {
   pl = pr = pu = pd = pa = pb = false;
 }
 
@@ -54,6 +60,19 @@ void AppFlashlight::init(void) {
 }
 
 void AppFlashlight::exit(void) {
+}
+
+AppController::AppController() {
+}
+
+AppController::~AppController() {
+}
+
+void AppController::init(PdaOS* os) {
+  app_init_controller(os);
+}
+
+void AppController::exit(void) {
 }
 
 PdaOS::PdaOS() {

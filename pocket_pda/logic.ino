@@ -15,13 +15,13 @@ extern void app_todo(PdaOS* os);
 static void init(PdaOS* os) {
   switch (os->app) {
     case APP_CALCULATOR: os->calc.init(); break;
-    case APP_FLASHLIGHT: os->flashlight.init(); break;
+    case APP_FLASHLIGHT: os->light.init(); break;
     case APP_FINANCES: break;
     case APP_CHRONOGRAPH: break;
     case APP_COUNTDOWN: break;
     case APP_CALENDAR: break;
     case APP_GAMES: break;
-    case APP_CONTROLLER: break;
+    case APP_CONTROLLER: os->ctrl.init(os); break;
     case APP_TODO: break;
     default: break;
   }
@@ -67,45 +67,56 @@ void toString(double n, String &ret) {
   ret = String(n);
 }
 
-uint8_t input(void) {
+uint8_t input(uint8_t* r) {
   uint8_t result = 0;
+  if (r) *r = 0;
   if (!P.pr && A.pressed(RIGHT_BUTTON)) {
     P.pr = true;
     result += RIGHT_BUTTON;
   } else if (P.pr && A.notPressed(RIGHT_BUTTON)) {
     P.pr = false;
+    if (r) *r += RIGHT_BUTTON;
   }
   if (!P.pl && A.pressed(LEFT_BUTTON)) {
     P.pl = true;
     result += LEFT_BUTTON;
   } else if (P.pl && A.notPressed(LEFT_BUTTON)) {
     P.pl = false;
+    if (r) *r += LEFT_BUTTON;
   }
   if (!P.pu && A.pressed(UP_BUTTON)) {
     P.pu = true;
     result += UP_BUTTON;
   } else if (P.pu && A.notPressed(UP_BUTTON)) {
     P.pu = false;
+    if (r) *r += UP_BUTTON;
   }
   if (!P.pd && A.pressed(DOWN_BUTTON)) {
     P.pd = true;
     result += DOWN_BUTTON;
   } else if (P.pd && A.notPressed(DOWN_BUTTON)) {
     P.pd = false;
+    if (r) *r += DOWN_BUTTON;
   }
   if (!P.pa && A.pressed(A_BUTTON)) {
     P.pa = true;
     result += A_BUTTON;
   } else if (P.pa && A.notPressed(A_BUTTON)) {
     P.pa = false;
+    if (r) *r += A_BUTTON;
   }
   if (!P.pb && A.pressed(B_BUTTON)) {
     P.pb = true;
     result += B_BUTTON;
   } else if (P.pb && A.notPressed(B_BUTTON)) {
     P.pb = false;
+    if (r) *r += B_BUTTON;
   }
   return result;
+}
+
+void initLogic(PdaOS* os) {
+  os->operation = &P;
 }
 
 void run(PdaOS* os) {

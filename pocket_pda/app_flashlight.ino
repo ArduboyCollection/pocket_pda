@@ -11,7 +11,7 @@ static void update(PdaOS* os, AppFlashlight* app) {
       break;
     case DOWN_BUTTON:
       app->interval -= 5;
-      if (app->interval < 0) app->interval = 5;
+      if (app->interval <= 0) app->interval = 5;
       break;
     case A_BUTTON:
       app->always = !app->always;
@@ -51,7 +51,7 @@ static void draw(PdaOS* os, AppFlashlight* app) {
 }
 
 void app_flashlight(PdaOS* os) {
-  AppFlashlight* app = &os->flashlight;
+  AppFlashlight* app = &os->light;
   update(os, app);
   draw(os, app);
 }
