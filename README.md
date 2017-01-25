@@ -1,4 +1,4 @@
-# Pocket PDA
+# Pocket PDA (UNDER DEVELOPMENT)
 
 **Copyright (C) 2017 [Wang Renxin](https://github.com/paladin-t/). All rights reserved.**
 
@@ -6,15 +6,18 @@
 
 ## Introduction
 
-Pocket PDA is an OS for the Arduboy with some useful utilities.
+Pocket PDA is an OS for the Arduboy with some useful utilities, which turns your Arduboy into a PDA.
 
-![](docs/run.png)
+Remember the PocketStation?
+
+![](docs/pocketstation.png)
 
 ## Installation
 
-### 1. Use the HEX
+### 1. Use the precompiled
 
-* Use an Arduboy HEX uploader to upload the `/hex/pocket_pda.hex` to your Arduboy.
+* Use an Arduboy uploader to upload the `/out/pocket_pda.hex` to your Arduboy.
+* Or use an Arduboy manager to upload the `/out/pocket_pda.arduboy` package.
 
 ### 2. Use the sketch
 
@@ -23,6 +26,10 @@ Pocket PDA is an OS for the Arduboy with some useful utilities.
 * Compile and upload the sketch.
 
 ## Functionalities
+
+![](docs/run0.png)
+
+![](docs/run1.png)
 
 ### 1. Calculator
 
