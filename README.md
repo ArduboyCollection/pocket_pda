@@ -1,4 +1,4 @@
-# Pocket PDA (UNDER DEVELOPMENT)
+# Pocket PDA
 
 **Copyright (C) 2017 [Wang Renxin](https://github.com/paladin-t/). All rights reserved.**
 
