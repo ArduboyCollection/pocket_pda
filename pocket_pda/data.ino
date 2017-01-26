@@ -47,25 +47,53 @@ void AppCalculator::init(void) {
 void AppCalculator::exit(void) {
 }
 
-AppFlashlight::AppFlashlight() {
-}
-
-AppFlashlight::~AppFlashlight() {
-}
-
 void AppFlashlight::init(void) {
   always = true;
-  interval = 60;
+  interval = FPS * 2;
   tick = 0;
+}
+
+void AppExchange::init(void) {
+  usd = cny = 0;
+  index = 0;
+  cursor = 0;
+}
+
+void AppExchange::exit(void) {
 }
 
 void AppFlashlight::exit(void) {
 }
 
-AppController::AppController() {
+void AppChronograph::init(void) {
+  sec = 0;
+  tick = 0;
+  paused = true;
 }
 
-AppController::~AppController() {
+void AppChronograph::exit(void) {
+}
+
+void AppCountdown::init(void) {
+  sec = 60 * 15;
+  tick = 0;
+  paused = true;
+  cursor = 0;
+}
+
+void AppCountdown::exit(void) {
+}
+
+void AppCalendar::init(void) {
+  yr = EEPROMReadlong(600);
+  mo = EEPROM.read(604);
+  if (yr == 0 || yr == 0xffffffff) yr = 2017;
+  if (mo == 0 || mo == 0xff) mo = 1;
+}
+
+void AppCalendar::exit(void) {
+  EEPROMWritelong(600, yr);
+  EEPROM.write(604, mo);
 }
 
 void AppController::init(PdaOS* os) {

@@ -45,33 +45,57 @@ A basic math calculator App.
 
 ![](docs/app_light.png)
 
-A flashlibht App.
+A flashlight App.
 
 * `UP`/`DOWN` to modify flash interval.
 * `A` to toggle flash.
 * `B` to exit the App.
 
-### 3. Finances
+### 3. Exchange Rate
 
-IN PLAN
+![](docs/app_exchange.png)
+
+An exchange rate App.
+
+* `B` to exit the App.
 
 ### 4. Chronograph
 
-IN PLAN
+![](docs/app_chronograph.png)
+
+A chronograph App.
+
+* `A` to start or stop ticking.
+* `B` to clear record, or exit the App if no record.
+
+It can ticks at background.
 
 ### 5. Countdown
 
-IN PLAN
+![](docs/app_count.png)
+
+A countdown App.
+
+* `UP`/`DOWN` to modify the time set.
+* `LEFT`/`RIGHT` to move the cursor.
+* `A` to toggle start/paused ticking.
+* `B` to exit the App.
+
+It turns to the flashlight screen when timeout.
+
+It can ticks at background.
 
 ### 6. Calendar
 
-IN PLAN
+![](docs/app_calendar.png)
 
-### 7. Games
+A calendar App.
 
-IN PLAN
+* `UP`/`DOWN` to change month.
+* `LEFT`/`RIGHT` to change year.
+* `B` to exit the App.
 
-### 8. Controller
+### 7. Controller
 
 ![](docs/app_ctrl.png)
 
@@ -82,7 +106,3 @@ A simulated keyboard App, can be used as a game controller.
 * `B` to simulate the `END` key.
 
 Hold all keys to exit the controller App.
-
-### 9. Todo
-
-IN PLAN

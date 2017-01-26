@@ -11,6 +11,8 @@ static void intro(void) {
     A.clear();
     A.setCursor(34, i);
     A.print("Pocket PDA");
+    A.setCursor(43, i + 8);
+    A.print("V 0.8.0");
     delay(20);
     A.display();
   }
@@ -21,10 +23,10 @@ void setup() {
   Serial.begin(9600);
   A.begin();
   A.initRandomSeed();
-  A.setFrameRate(30);
+  A.setFrameRate(FPS);
+  intro();
   OS.arduboy = &A;
   initLogic(&OS);
-  intro();
 }
 
 void loop() {

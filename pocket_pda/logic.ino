@@ -2,6 +2,9 @@
 
 static Operation P;
 
+extern void app_update_chronograph(PdaOS* os);
+extern void app_update_countdown(PdaOS* os);
+
 extern void app_calculator(PdaOS* os);
 extern void app_flashlight(PdaOS* os);
 extern void app_finances(PdaOS* os);
@@ -16,12 +19,12 @@ static void init(PdaOS* os) {
   switch (os->app) {
     case APP_CALCULATOR: os->calc.init(); break;
     case APP_FLASHLIGHT: os->light.init(); break;
-    case APP_FINANCES: break;
+    case APP_FINANCES: os->exchange.init(); break;
     case APP_CHRONOGRAPH: break;
     case APP_COUNTDOWN: break;
-    case APP_CALENDAR: break;
+    case APP_CALENDAR: os->calendar.init(); break;
+	case APP_CONTROLLER: os->ctrl.init(os); break;
     case APP_GAMES: break;
-    case APP_CONTROLLER: os->ctrl.init(os); break;
     case APP_TODO: break;
     default: break;
   }
@@ -117,6 +120,8 @@ uint8_t input(uint8_t* r) {
 
 void initLogic(PdaOS* os) {
   os->operation = &P;
+  os->chronograph.init();
+  os->count.init();
 }
 
 void run(PdaOS* os) {
@@ -127,10 +132,12 @@ void run(PdaOS* os) {
     case APP_CHRONOGRAPH: app_chronograph(os); break;
     case APP_COUNTDOWN: app_countdown(os); break;
     case APP_CALENDAR: app_calendar(os); break;
+	case APP_CONTROLLER: app_controller(os); break;
     case APP_GAMES: app_games(os); break;
-    case APP_CONTROLLER: app_controller(os); break;
     case APP_TODO: app_todo(os); break;
     default: menu(os); break;
   }
+  app_update_chronograph(os);
+  app_update_countdown(os);
   Serial.write(os->arduboy->getBuffer(), 128 * 64 / 8);
 }

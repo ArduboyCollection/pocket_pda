@@ -3,6 +3,10 @@
 
 #include <Arduboy2.h>
 
+#ifndef FPS
+# define FPS 30
+#endif /* FPS */
+
 #ifndef countof
 # define countof(A) (sizeof(A) / sizeof(*(A)))
 #endif /* countof */
@@ -27,10 +31,10 @@ enum Apps {
   APP_CHRONOGRAPH,
   APP_COUNTDOWN,
   APP_CALENDAR,
-  APP_GAMES,
   APP_CONTROLLER,
+  APP_GAMES,
   APP_TODO,
-  APP_END
+  APP_END = APP_CONTROLLER + 1
 };
 
 struct PdaOS;
@@ -59,15 +63,48 @@ struct AppFlashlight {
   int16_t interval;
   int16_t tick;
 
-  AppFlashlight();
-  ~AppFlashlight();
+  void init(void);
+  void exit(void);
+};
+
+struct AppExchange {
+  double usd;
+  double cny;
+  uint8_t index;
+  uint8_t cursor;
+
+  void init(void);
+  void exit(void);
+};
+
+struct AppChronograph {
+  uint32_t sec;
+  float tick;
+  bool paused;
+
+  void init(void);
+  void exit(void);
+};
+
+struct AppCountdown {
+  int16_t sec;
+  float tick;
+  bool paused;
+  uint8_t cursor;
+
+  void init(void);
+  void exit(void);
+};
+
+struct AppCalendar {
+  uint32_t yr;
+  uint8_t mo;
+
   void init(void);
   void exit(void);
 };
 
 struct AppController {
-  AppController();
-  ~AppController();
   void init(PdaOS* os);
   void exit(void);
 };
@@ -79,8 +116,12 @@ struct PdaOS {
   union {
     AppCalculator calc;
     AppFlashlight light;
+    AppExchange exchange;
     AppController ctrl;
+    AppCalendar calendar;
   };
+  AppChronograph chronograph;
+  AppCountdown count;
 
   PdaOS();
   ~PdaOS();
