@@ -132,7 +132,7 @@ void run(PdaOS* os) {
     case APP_CHRONOGRAPH: app_chronograph(os); break;
     case APP_COUNTDOWN: app_countdown(os); break;
     case APP_CALENDAR: app_calendar(os); break;
-	case APP_CONTROLLER: app_controller(os); break;
+	  case APP_CONTROLLER: app_controller(os); break;
     case APP_GAMES: app_games(os); break;
     case APP_TODO: app_todo(os); break;
     default: menu(os); break;
