@@ -11,8 +11,8 @@ static void intro(void) {
     A.clear();
     A.setCursor(34, i);
     A.print("Pocket PDA");
-    A.setCursor(43, i + 8);
-    A.print("V 0.8.0");
+    A.setCursor(46, i + 8);
+    A.print("V0.8.0");
     delay(20);
     A.display();
   }

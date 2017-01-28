@@ -54,9 +54,12 @@ static void menu(PdaOS* os) {
       init(os);
       return;
   }
-  if (app <= -APP_BEGIN && app > -(APP_BEGIN + 6)) os->arduboy->drawBitmap(0, 0, SPRITE_MENU0, 128, 64, WHITE);
-  else os->arduboy->drawBitmap(0, 0, SPRITE_MENU1, 128, 64, WHITE);
+  const uint8_t* const PAGES[] = { SPRITE_MENU0, SPRITE_MENU1 };
   int8_t idx = -app;
+  int8_t page = (idx - 1) / 6;
+  os->arduboy->drawBitmap(0, 0, PAGES[page], 128, 64, WHITE);
+  if (page != 0) os->arduboy->drawBitmap(120, 0, SPRITE_UP, 8, 8, WHITE);
+  if (page != countof(PAGES) - 1) os->arduboy->drawBitmap(120, 56, SPRITE_DOWN, 8, 8, WHITE);
   uint8_t x = (idx - 1) % 3;
   uint8_t y = ((idx - 1) / 3) % 2;
   os->arduboy->drawRect(x * 40 + 8, y * 32, 32, 32, WHITE);
