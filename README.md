@@ -10,7 +10,7 @@ Pocket PDA is an OS for the Arduboy with some useful utilities, which turns your
 
 Remember the PocketStation?
 
-![](docs/pocketstation.png)
+![](img/pocketstation.png)
 
 ## Installation
 
@@ -27,13 +27,13 @@ Remember the PocketStation?
 
 ## Applications
 
-![](docs/run0.png)
+![](img/run0.png)
 
-![](docs/run1.png)
+![](img/run1.png)
 
 ### 1. Calculator
 
-![](docs/app_calc.png)
+![](img/app_calc.png)
 
 A basic math calculator App.
 
@@ -43,7 +43,7 @@ A basic math calculator App.
 
 ### 2. Flashlight
 
-![](docs/app_light.png)
+![](img/app_light.png)
 
 A flashlight App.
 
@@ -53,7 +53,7 @@ A flashlight App.
 
 ### 3. Exchange Rate
 
-![](docs/app_exchange.png)
+![](img/app_exchange.png)
 
 An exchange rate App.
 
@@ -61,7 +61,7 @@ An exchange rate App.
 
 ### 4. Chronograph
 
-![](docs/app_chronograph.png)
+![](img/app_chronograph.png)
 
 A chronograph App.
 
@@ -72,7 +72,7 @@ It can ticks at background.
 
 ### 5. Countdown
 
-![](docs/app_count.png)
+![](img/app_count.png)
 
 A countdown App.
 
@@ -87,7 +87,7 @@ It can ticks at background.
 
 ### 6. Calendar
 
-![](docs/app_calendar.png)
+![](img/app_calendar.png)
 
 A calendar App.
 
@@ -97,7 +97,7 @@ A calendar App.
 
 ### 7. Controller
 
-![](docs/app_ctrl.png)
+![](img/app_ctrl.png)
 
 A simulated keyboard App, can be used as a game controller.
 
