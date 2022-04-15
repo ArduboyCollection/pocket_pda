@@ -125,7 +125,7 @@ static void onButton4Clicked(PdaOS* os, AppCalculator* app) {
 }
 
 static void onButton5Clicked(PdaOS* os, AppCalculator* app) {
-  onButtonNumClicked(os, app, '4');
+  onButtonNumClicked(os, app, '5');
 }
 
 static void onButton6Clicked(PdaOS* os, AppCalculator* app) {
